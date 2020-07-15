@@ -1,0 +1,8 @@
+# virtual environment
+vevn/
+
+# dotenvs
+.evn
+
+# logs
+*.log
