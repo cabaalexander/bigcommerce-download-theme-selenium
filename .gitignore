@@ -1,8 +1,5 @@
-# virtual environment
 vevn/
-
-# dotenvs
-.evn
-
-# logs
+.env
 *.log
+token.*
+credentials.json
