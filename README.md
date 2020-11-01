@@ -14,6 +14,12 @@ PASSWORD="" # artbead password
 ```
 
 ### Usage
+```
+$ make all
+```
+
+This will download the current theme and wait for the download to finish and
+then it will extract the 'config.json' into your project location
 
 ```
 $ make download
