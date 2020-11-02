@@ -8,4 +8,7 @@ download:
 extract:
 	@./extract-config.sh $(project_folder)
 
-.PHONY: download extract
+all: download
+	@./wait-to-extract.sh $(project_folder)
+
+.PHONY: download extract all

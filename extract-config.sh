@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DOWNLOADS="$HOME/Downloads"
-DESTINATION="$DOWNLOADS/artbeads_storefront_theme"
+DOWNLOADS="$PWD/downloads"
+DESTINATION="$DOWNLOADS/storefront_theme"
 project_folder=${1:-"$HOME/work/artbeads-bigcommerce"}
 
 if ! [ -d "$project_folder" ]; then
@@ -22,8 +22,10 @@ mkdir -p "$DESTINATION"
 mv "$DOWNLOADS/$chiara_zip_filename" "$DESTINATION/$chiara_zip_filename"
 
 cd "$DESTINATION"
-unzip "$DESTINATION/$chiara_zip_filename"
+echo "- unzipping: '$chiara_zip_filename'..."
+unzip "$DESTINATION/$chiara_zip_filename" &> /dev/null
 
+echo "- move 'config.json' to '$project_folder'"
 cp ./config.json "$project_folder"
 
 rm -rf "$DOWNLOADS/$chiara_zip_filename"
