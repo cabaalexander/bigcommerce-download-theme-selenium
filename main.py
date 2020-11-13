@@ -92,6 +92,8 @@ def trigger_bigcommerce_token():
     password_field = driver.find_element_by_css_selector('#user_password')
     password_field.clear()
     password_field.send_keys(password)
+    # just to be a little bit cautious here
+    time.sleep(1)
 
     # this will trigger 2fp (gmail entry)
     submit_button = driver.find_element_by_css_selector(
@@ -103,8 +105,10 @@ print('# login in to bigcommerce')
 trigger_bigcommerce_token()
 
 # let token to arrive to your email
-time.sleep(3)
 print('# get bigcommerce token from your GMAIL account')
+seconds = 6
+print(f'# waiting {seconds} seconds...')
+time.sleep(seconds)
 token = get_bigcommecre_token.main()
 
 print('# enter token in the input field')
